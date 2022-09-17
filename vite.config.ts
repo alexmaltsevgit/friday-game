@@ -8,9 +8,7 @@ export default defineConfig({
     port: 3000,
   },
   resolve: {
-    alias: {
-      src: path.resolve("src/"),
-    },
+    alias: [{ find: "@", replacement: path.resolve(__dirname, "src") }],
   },
   build: {
     target: "esnext",
