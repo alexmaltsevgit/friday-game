@@ -1,6 +1,8 @@
 .root {
   display: flex;
 
+  width: fit-content;
+
   padding-inline: calc(21 / 18) + rem;
   padding-block: calc(15 / 18) + rem;
 
