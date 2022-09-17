@@ -1,9 +1,16 @@
+import { createSignal } from "solid-js";
+
 import { Button } from "@/components/shared";
+import { model as modelDir } from "@/directives";
 
 import decor from "@/assets/index-screen-decor.png";
 import styles from "./IndexScreen.module.scss";
 
+const model = modelDir;
+
 export const IndexScreen = () => {
+  const [name, setName] = createSignal();
+
   return (
     <div class={styles.root}>
       <div class={styles.content}>
@@ -11,7 +18,7 @@ export const IndexScreen = () => {
           <h1>Кто я?</h1>
 
           <div class={styles.form}>
-            <input type="text" />
+            <input use:model={[name, setName]} />
 
             <div class={styles.buttons}>
               <Button>Создать игру</Button>
