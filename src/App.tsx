@@ -1,3 +1,5 @@
 import { Component } from "solid-js";
 
-export const App: Component = () => <div>hi</div>;
+import styles from "./App.module.scss";
+
+export const App: Component = () => <div class={styles.root}>hi</div>;
