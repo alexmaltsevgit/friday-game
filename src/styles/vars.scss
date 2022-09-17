@@ -1,4 +1,4 @@
-:root {
+@mixin colors {
   --accent-primary: #af64d2;
 
   --accent-secondary-1: #feecdc;
@@ -11,4 +11,13 @@
   --grey-3: #75808a;
 
   --soft-black: #151719;
+}
+
+@mixin fonts {
+  --font-default: "Montserrat", sans-serif;
+}
+
+:root {
+  @include colors;
+  @include fonts;
 }
