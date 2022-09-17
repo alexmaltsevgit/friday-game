@@ -23,6 +23,7 @@
     "vite-plugin-solid": "^2.3.2"
   },
   "dependencies": {
+    "clsx": "^1.2.1",
     "solid-js": "^1.5.1"
   }
 }
