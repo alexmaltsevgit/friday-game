@@ -24,6 +24,7 @@
   },
   "dependencies": {
     "clsx": "^1.2.1",
+    "socket.io-client": "^4.5.2",
     "solid-js": "^1.5.1"
   }
 }
