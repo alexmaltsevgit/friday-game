@@ -16,7 +16,7 @@ export const Button: ParentComponent<Props> = (props) => {
     <button
       class={clsx(styles.root, styles[p.variant])}
       classList={{ [styles.disabled]: p.disabled }}
-      onClick={() => p.onClick}
+      onClick={() => p.onClick()}
       disabled={p.disabled}
     >
       {p.children}
