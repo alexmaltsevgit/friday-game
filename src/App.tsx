@@ -1,10 +1,16 @@
 import { Component } from "solid-js";
 import { Routes, Route } from "@solidjs/router";
 
-import { IndexScreen } from "@/components/screens";
+import { IndexScreen, RoomScreen } from "@/components/screens";
+import { routes, useSyncRoutes } from "@/service/routes";
 
-export const App: Component = () => (
-  <Routes>
-    <Route path={"/"} component={IndexScreen} />
-  </Routes>
-);
+export const App: Component = () => {
+  useSyncRoutes();
+
+  return (
+    <Routes>
+      <Route path={routes.index()} component={IndexScreen} />
+      <Route path={routes.room()} component={RoomScreen} />
+    </Routes>
+  );
+};
