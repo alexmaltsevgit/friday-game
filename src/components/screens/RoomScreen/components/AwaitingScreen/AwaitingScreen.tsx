@@ -11,7 +11,7 @@ type Params = {
 
 export const AwaitingScreen = () => {
   const roomState = useRoomState();
-  const players = () => Array.from(roomState.game.players.values());
+  const players = () => Object.values(roomState.game.players);
   const isOwner = () => roomState.myId === roomState.game?.ownerId;
 
   const { id } = useParams<Params>();
