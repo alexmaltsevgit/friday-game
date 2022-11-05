@@ -1,0 +1,31 @@
+@import "src/styles/mixins";
+
+.root {
+  @include container;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  height: 100vh;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  min-height: 80%;
+}
+
+.input {
+  margin-top: 60px;
+  max-width: 240px;
+}
+
+.controls {
+  display: flex;
+  flex-direction: column;
+
+  row-gap: 1rem;
+
+  margin-top: 114px;
+}
