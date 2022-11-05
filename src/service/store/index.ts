@@ -3,6 +3,8 @@ import { createStore } from "solid-js/store";
 import { createMutation } from "@tanstack/solid-query";
 import { MapSchema } from "@colyseus/schema";
 
+import { RoomStatus } from "@/types";
+
 const socket = new Client(import.meta.env.VITE_WS_SERVER_URL_DEV);
 
 type Player = {
@@ -12,6 +14,7 @@ type Player = {
 
 type GameState = {
   ownerId?: string;
+  status: RoomStatus;
   players: MapSchema<Player>;
 };
 
