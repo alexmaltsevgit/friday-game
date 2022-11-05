@@ -1,8 +1,14 @@
 import { useRoomState } from "@/service/store";
+import { RoomStatus } from "@/types";
+import { AwaitingScreen } from "./components";
+
+const statusToScreenMap = {
+  [RoomStatus.Awaiting]: AwaitingScreen,
+};
 
 export const RoomScreen = () => {
   const roomState = useRoomState();
-  const isOwner = () => roomState.myId === roomState.game?.ownerId;
+  const status = roomState.game.status;
 
-  return <div>RoomScreen</div>;
+  return <>{statusToScreenMap[status] ?? <div>Error</div>}</>;
 };
