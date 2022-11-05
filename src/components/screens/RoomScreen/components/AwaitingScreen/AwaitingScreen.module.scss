@@ -1,0 +1,68 @@
+@import "@/styles/mixins";
+
+.root {
+  @include container;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  height: 100vh;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  min-height: 80%;
+}
+
+.title {
+  display: flex;
+  align-items: center;
+  column-gap: 2rem;
+}
+
+.code {
+  letter-spacing: 3px;
+  padding: 6px 9px;
+  color: var(--grey-3);
+  background-color: var(--grey-1);
+  border-radius: 9px;
+}
+
+.players {
+  display: flex;
+  flex-direction: column;
+  row-gap: calc(24 / 18) + rem;
+
+  margin-top: 60px;
+}
+
+.playersTitle {
+  padding-inline: 1rem;
+}
+
+.playersList {
+  width: fit-content;
+}
+
+.player {
+  padding-block: calc(15 / 18) + rem;
+  padding-inline: 1rem;
+
+  font-size: calc(24 / 18) + rem;
+  text-transform: capitalize;
+
+  &:hover {
+    background-color: var(--grey-1);
+  }
+}
+
+.controls {
+  display: flex;
+  flex-direction: column;
+
+  row-gap: 1rem;
+
+  margin-top: auto;
+}
