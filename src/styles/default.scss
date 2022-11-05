@@ -12,6 +12,7 @@ h4,
 h5,
 h6,
 p {
+  margin: 0;
   color: var(--soft-black);
 }
 
@@ -23,4 +24,14 @@ h3 {
 
 h1 {
   font-size: calc(60 / 18) + rem;
+}
+
+h2 {
+  font-size: calc(36 / 18) + rem;
+}
+
+h5 {
+  color: var(--grey-3);
+  font-size: calc(18 / 18) + rem;
+  font-weight: 500;
 }
