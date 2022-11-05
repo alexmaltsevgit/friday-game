@@ -1,6 +1,7 @@
 export enum RoomStatus {
-  Pending = "pending",
-  Active = "active",
+  Awaiting = "awaiting",
+  FictionNaming = "fiction-naming",
+  Guessing = "guessing",
   Finished = "finished",
 }
 
