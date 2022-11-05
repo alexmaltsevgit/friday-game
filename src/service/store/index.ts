@@ -27,10 +27,13 @@ export const useCreateRoom = () => {
   const mutationFn = async (realName: string) => {
     const room = await socket.create<GameState>("game", { realName });
 
-    setRoomStore("roomId", room.id);
-    setRoomStore("myId", room.sessionId);
+    room.onStateChange((s) => {
+      // don't move this few lines out of 'onStateChange'
+      setRoomStore("roomId", room.id);
+      setRoomStore("myId", room.sessionId);
 
-    room.onStateChange((s) => setRoomStore("game", s));
+      setRoomStore("game", s);
+    });
 
     return room;
   };
