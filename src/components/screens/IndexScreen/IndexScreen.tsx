@@ -1,20 +1,24 @@
-import { createSignal, Show } from "solid-js";
+import { Show } from "solid-js";
+import { createStorageSignal } from "@solid-primitives/storage";
+import { useNavigate } from "@solidjs/router";
 
 import { Button } from "@/components/shared";
 import { model as modelDir } from "@/directives";
 import { useCreateRoom } from "@/service/store";
+import { routes } from "@/service/routes";
+import { LocalStorageKeys } from "@/service/localStorage";
 
 import decor from "@/assets/index-screen-decor.png";
 import styles from "./IndexScreen.module.scss";
-import { useNavigate } from "@solidjs/router";
-import { routes } from "@/service/routes";
 
 const model = modelDir;
 
 export const IndexScreen = () => {
   const navigate = useNavigate();
 
-  const [name, setName] = createSignal<string>();
+  const [name, setName] = createStorageSignal<string>(
+    LocalStorageKeys.Username
+  );
 
   const mutation = useCreateRoom();
   const onCreateRoom = () => mutation.mutate(name());

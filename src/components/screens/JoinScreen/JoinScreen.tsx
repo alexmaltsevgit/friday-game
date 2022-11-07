@@ -1,10 +1,12 @@
-import { useNavigate, useParams } from "@solidjs/router";
 import { createSignal } from "solid-js";
+import { useNavigate, useParams } from "@solidjs/router";
+import { createStorageSignal } from "@solid-primitives/storage";
 
 import { model as modelDir } from "@/directives";
 import { Button } from "@/components/shared";
 import { routes } from "@/service/routes";
 import { useJoinRoom } from "@/service/store";
+import { LocalStorageKeys } from "@/service/localStorage";
 
 import styles from "./JoinScreen.module.scss";
 
@@ -18,7 +20,10 @@ export const JoinScreen = () => {
   const navigate = useNavigate();
   const { id } = useParams<Params>();
 
-  const [name, setName] = createSignal<string>();
+  const [name, setName] = createStorageSignal<string>(
+    LocalStorageKeys.Username
+  );
+
   const [code, setCode] = createSignal(id);
 
   const mutation = useJoinRoom();
