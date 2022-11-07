@@ -31,34 +31,32 @@ export const AwaitingScreen = () => {
 
   return (
     <div class={styles.root}>
-      <div class={styles.content}>
-        <h2 class={styles.title}>
-          <span>{title()}</span>
+      <h2 class={styles.title}>
+        <span>{title()}</span>
 
-          <Show when={isOwner()}>
-            <span class={styles.code}>{id}</span>
-          </Show>
-        </h2>
+        <Show when={isOwner()}>
+          <span class={styles.code}>{id}</span>
+        </Show>
+      </h2>
 
-        <div class={styles.players}>
-          <h5 class={styles.playersTitle}>{`Игроки (${players().length})`}</h5>
+      <div class={styles.players}>
+        <h5 class={styles.playersTitle}>{`Игроки (${players().length})`}</h5>
 
-          <ul class={styles.playersList}>
-            <For each={players()}>
-              {(player) => <li class={styles.player}>{player.realName}</li>}
-            </For>
-          </ul>
-        </div>
+        <ul class={styles.playersList}>
+          <For each={players()}>
+            {(player) => <li class={styles.player}>{player.realName}</li>}
+          </For>
+        </ul>
+      </div>
 
-        <div class={styles.controls}>
-          <Show when={isOwner()}>
-            <Button onClick={onChangeRoomStage}>Перейти к началу игры</Button>
-          </Show>
+      <div class={styles.controls}>
+        <Show when={isOwner()}>
+          <Button onClick={onChangeRoomStage}>Перейти к началу игры</Button>
+        </Show>
 
-          <Button variant="outlined" onClick={onGoBack}>
-            Назад
-          </Button>
-        </div>
+        <Button variant="outlined" onClick={onGoBack}>
+          Назад
+        </Button>
       </div>
     </div>
   );

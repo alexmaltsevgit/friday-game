@@ -4,6 +4,8 @@ import { useLeaveRoom, useRoomState } from "@/service/store";
 import { RoomStage } from "@/types";
 import { AwaitingScreen, FillingScreen } from "./components";
 
+import styles from "./RoomScreen.module.scss";
+
 const statusToScreenMap = {
   [RoomStage.Awaiting]: AwaitingScreen,
   [RoomStage.Filling]: FillingScreen,
@@ -15,5 +17,11 @@ export const RoomScreen = () => {
 
   onCleanup(leaveRoomMutation.mutate);
 
-  return <>{statusToScreenMap[roomState.game.stage] ?? <div>Error</div>}</>;
+  return (
+    <div class={styles.root}>
+      <div class={styles.content}>
+        {statusToScreenMap[roomState.game.stage] ?? <div>Error</div>}
+      </div>
+    </div>
+  );
 };
