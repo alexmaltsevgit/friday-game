@@ -21,5 +21,5 @@ export type GameColyseusState = {
 export type RoomColyseusState = {
   roomId?: string;
   myId?: string;
-  game: GameColyseusState;
+  game?: GameColyseusState;
 };
