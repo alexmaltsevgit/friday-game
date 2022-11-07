@@ -16,8 +16,26 @@
   min-height: 80%;
 }
 
-.input {
+.form {
+  display: flex;
+  flex-direction: column;
+
+  row-gap: 2rem;
+
   margin-top: 60px;
+}
+
+.inputContainer {
+  display: flex;
+  flex-direction: column;
+  row-gap: calc(12 / 18) + rem;
+}
+
+.inputLabel {
+  color: var(--grey-3);
+}
+
+.input {
   max-width: 240px;
 }
 
@@ -27,5 +45,5 @@
 
   row-gap: 1rem;
 
-  margin-top: 114px;
+  margin-top: 81px;
 }
