@@ -11,6 +11,7 @@ const isColyseusPrimitive = (value: unknown): value is ColyseusPrimitive =>
   typeof value === "number" ||
   typeof value === "boolean" ||
   typeof value === "undefined" ||
+  typeof value === "function" ||
   value === null;
 
 const isMapSchema = (value: unknown): value is MapSchema =>

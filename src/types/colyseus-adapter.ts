@@ -8,7 +8,14 @@ type PlainArrayFromArraySchema<T> = T extends ArraySchema<infer R>
   ? R[]
   : never;
 
-export type ColyseusPrimitive = undefined | null | number | string | boolean;
+export type ColyseusPrimitive =
+  | undefined
+  | null
+  | number
+  | string
+  | boolean
+  // eslint-disable-next-line @typescript-eslint/ban-types
+  | Function;
 
 export type ColyseusState = {
   [Key: string]: MapSchema | ArraySchema | ColyseusPrimitive | ColyseusState;
