@@ -81,4 +81,25 @@ export const useChangeGameStage = () => {
   return createMutation(mutationFn);
 };
 
+type ChangePlayerFictionNamePayload = {
+  playerId: string;
+  newFictionName: string;
+};
+
+export const useChangePlayerFictionName = () => {
+  const mutationFn = async ({
+    playerId,
+    newFictionName,
+  }: ChangePlayerFictionNamePayload) =>
+    room()?.send(SocketMessage.ChangePlayerFictionName, {
+      playerId,
+      newFictionName,
+    });
+
+  return createMutation(mutationFn, {
+    onMutate: ({ playerId, newFictionName }) =>
+      setRoomStore("game", "players", playerId, "fictionName", newFictionName),
+  });
+};
+
 export const useRoomState = () => roomStore;
