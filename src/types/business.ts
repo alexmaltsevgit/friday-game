@@ -1,8 +1,8 @@
 import { MapSchema } from "@colyseus/schema";
 
-export enum RoomStatus {
+export enum RoomStage {
   Awaiting = "awaiting",
-  FictionNaming = "fiction-naming",
+  Filling = "filling",
   Guessing = "guessing",
   Finished = "finished",
 }
@@ -14,7 +14,7 @@ type Player = {
 
 export type GameColyseusState = {
   ownerId?: string;
-  status: RoomStatus;
+  stage: RoomStage;
   players: MapSchema<Player>;
 };
 

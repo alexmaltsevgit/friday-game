@@ -1,10 +1,12 @@
 import { useNavigate, useParams } from "@solidjs/router";
-import { useRoomState } from "@/service/store";
-
-import styles from "./AwaitingScreen.module.scss";
 import { For, Show } from "solid-js";
+
+import { useChangeGameStage, useRoomState } from "@/service/store";
 import { Button } from "@/components/shared";
 import { routes } from "@/service/routes";
+import { RoomStage } from "@/types";
+
+import styles from "./AwaitingScreen.module.scss";
 
 type Params = {
   id: string;
@@ -17,6 +19,10 @@ export const AwaitingScreen = () => {
   const roomState = useRoomState();
   const players = () => Object.values(roomState.game.players);
   const isOwner = () => roomState.myId === roomState.game?.ownerId;
+
+  const changeRoomStageMutation = useChangeGameStage();
+  const onChangeRoomStage = () =>
+    changeRoomStageMutation.mutate(RoomStage.Filling);
 
   const onGoBack = () => navigate(routes.index());
 
@@ -46,7 +52,7 @@ export const AwaitingScreen = () => {
 
         <div class={styles.controls}>
           <Show when={isOwner()}>
-            <Button>Перейти к началу игры</Button>
+            <Button onClick={onChangeRoomStage}>Перейти к началу игры</Button>
           </Show>
 
           <Button variant="outlined" onClick={onGoBack}>

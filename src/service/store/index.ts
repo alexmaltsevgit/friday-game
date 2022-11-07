@@ -7,6 +7,8 @@ import {
   GameColyseusState,
   PlainStateFromColyseusState,
   RoomColyseusState,
+  RoomStage,
+  SocketMessage,
 } from "@/types";
 import { mapColyseusStateToPlainState } from "@/utils";
 
@@ -19,12 +21,14 @@ const [room, setRoom] = createSignal<Room>();
 const [roomStore, setRoomStore] =
   createStore<PlainStateFromColyseusState<RoomColyseusState>>(initialStore);
 
-const clearStore = () =>
+const clear = () => {
   setRoomStore({
     roomId: undefined,
     game: undefined,
     myId: undefined,
   });
+  setRoom(undefined);
+};
 
 const createStateChangeListener =
   (room: Room<GameColyseusState>) => (state: GameColyseusState) => {
@@ -38,7 +42,7 @@ const createStateChangeListener =
   };
 
 const initRoom = (room: Room<GameColyseusState>) => {
-  room.onLeave(clearStore);
+  room.onLeave(clear);
   room.onStateChange(createStateChangeListener(room));
   setRoom(room);
 };
@@ -68,6 +72,12 @@ export const useJoinRoom = () => {
 
 export const useLeaveRoom = () => {
   const mutationFn = () => room()?.leave();
+  return createMutation(mutationFn);
+};
+
+export const useChangeGameStage = () => {
+  const mutationFn = async (newStage: RoomStage) =>
+    room()?.send(SocketMessage.ChangeGameStage, { newStage: newStage });
   return createMutation(mutationFn);
 };
 
