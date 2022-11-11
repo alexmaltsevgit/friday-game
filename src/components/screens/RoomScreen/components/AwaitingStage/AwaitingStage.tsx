@@ -6,7 +6,7 @@ import { Button } from "@/components/shared";
 import { routes } from "@/service/routes";
 import { RoomStage } from "@/types";
 
-import styles from "./AwaitingScreen.module.scss";
+import styles from "./AwaitingStage.module.scss";
 
 type Params = {
   id: string;

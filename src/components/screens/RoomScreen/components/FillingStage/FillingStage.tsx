@@ -8,7 +8,7 @@ import { routes } from "@/service/routes";
 import { FillingRow } from "./components";
 import { RoomStage } from "@/types";
 
-import styles from "./FillingScreen.module.scss";
+import styles from "./FillingStage.module.scss";
 
 export const FillingStage = () => {
   const navigate = useNavigate();
