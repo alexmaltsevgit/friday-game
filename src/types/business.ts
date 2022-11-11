@@ -7,7 +7,7 @@ export enum RoomStage {
   Finished = "finished",
 }
 
-type Player = {
+export type Player = {
   realName: string;
   fictionName: string;
 };
