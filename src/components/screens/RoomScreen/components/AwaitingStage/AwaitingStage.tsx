@@ -12,7 +12,7 @@ type Params = {
   id: string;
 };
 
-export const AwaitingScreen = () => {
+export const AwaitingStage = () => {
   const { id } = useParams<Params>();
   const navigate = useNavigate();
 

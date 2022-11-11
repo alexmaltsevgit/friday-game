@@ -10,7 +10,7 @@ import { RoomStage } from "@/types";
 
 import styles from "./FillingScreen.module.scss";
 
-export const FillingScreen = () => {
+export const FillingStage = () => {
   const navigate = useNavigate();
 
   const roomState = useRoomState();
