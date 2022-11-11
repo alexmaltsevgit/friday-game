@@ -10,6 +10,7 @@ export enum RoomStage {
 export type Player = {
   realName: string;
   fictionName: string;
+  guessed: boolean;
 };
 
 export type GameColyseusState = {
