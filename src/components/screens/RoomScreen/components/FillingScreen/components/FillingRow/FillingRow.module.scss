@@ -1,0 +1,22 @@
+.root {
+  display: flex;
+  justify-content: space-between;
+
+  max-width: 550px;
+}
+
+.name {
+  font-size: calc(24 / 18) + rem;
+  text-transform: capitalize;
+}
+
+.selfFilledStatus {
+  font-size: calc(24 / 18) + rem;
+}
+
+.selfFilled {
+  color: var(--accent-primary-2);
+}
+
+.selfUnfilled {
+}
