@@ -2,10 +2,11 @@ import { useNavigate } from "@solidjs/router";
 import { Show } from "solid-js";
 import { Entries } from "@solid-primitives/keyed";
 
-import { useRoomState } from "@/service/store";
+import { useChangeGameStage, useRoomState } from "@/service/store";
 import { Button } from "@/components/shared";
 import { routes } from "@/service/routes";
 import { FillingRow } from "./components";
+import { RoomStage } from "@/types";
 
 import styles from "./FillingScreen.module.scss";
 
@@ -15,6 +16,10 @@ export const FillingScreen = () => {
   const roomState = useRoomState();
 
   const isOwner = () => roomState.myId === roomState.game?.ownerId;
+
+  const changeRoomStageMutation = useChangeGameStage();
+  const onChangeRoomStage = () =>
+    changeRoomStageMutation.mutate(RoomStage.Guessing);
 
   const onGoBack = () => navigate(routes.index());
 
@@ -41,7 +46,12 @@ export const FillingScreen = () => {
 
       <div class={styles.controls}>
         <Show when={isOwner()}>
-          <Button disabled={!isEveryPlayerHasFictionName()}>Начать игру</Button>
+          <Button
+            disabled={!isEveryPlayerHasFictionName()}
+            onClick={onChangeRoomStage}
+          >
+            Начать игру
+          </Button>
         </Show>
 
         <Button variant="outlined" onClick={onGoBack}>
