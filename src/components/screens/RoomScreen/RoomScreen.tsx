@@ -2,13 +2,14 @@ import { onCleanup } from "solid-js";
 
 import { useLeaveRoom, useRoomState } from "@/service/store";
 import { RoomStage } from "@/types";
-import { AwaitingStage, FillingStage } from "./components";
+import { AwaitingStage, FillingStage, GuessingStage } from "./components";
 
 import styles from "./RoomScreen.module.scss";
 
 const statusToScreenMap = {
   [RoomStage.Awaiting]: AwaitingStage,
   [RoomStage.Filling]: FillingStage,
+  [RoomStage.Guessing]: GuessingStage,
 };
 
 export const RoomScreen = () => {

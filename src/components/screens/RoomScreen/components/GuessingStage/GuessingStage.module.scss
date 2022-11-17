@@ -1,0 +1,35 @@
+@import "@/styles/mixins";
+
+.root {
+  display: contents;
+}
+
+.playersList {
+  display: flex;
+  flex-direction: column;
+  row-gap: calc(24 / 18) + rem;
+
+  margin-top: 60px;
+}
+
+.player {
+  display: flex;
+  justify-content: space-between;
+
+  max-width: 550px;
+
+  font-size: calc(24 / 18) + rem;
+}
+
+.accentColor {
+  color: var(--accent-primary-2);
+}
+
+.controls {
+  display: flex;
+  flex-direction: column;
+
+  row-gap: 1rem;
+
+  margin-top: auto;
+}
