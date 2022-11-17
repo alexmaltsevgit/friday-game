@@ -1,34 +1,44 @@
-## Usage
+# Description
 
-Those templates dependencies are maintained via [pnpm](https://pnpm.io) via `pnpm up -Lri`.
+This is a web implementation of a game called "Who am I?" or "Friday game"
 
-This is the reason you see a `pnpm-lock.yaml`. That being said, any package manager will work. This file can be safely be removed once you clone a template.
+### Architecture
 
-```bash
-$ npm install # or pnpm install or yarn install
-```
+This projects inherits a "Feature Sliced" design in it's simplified form. Follow the heuristics:
 
-### Learn more on the [Solid Website](https://solidjs.com) and come chat with us on our [Discord](https://discord.com/invite/solidjs)
+1. We have **screens** instead of **pages**, to demonstrate intent to make the game run smoothly - maybe with transition and animations in future
+2. We split layers only for components - all the services and utils are in mess in top-level folders. It's just easier for early development
+3. Postpone creating middle-class components as **entities, features, etc.** in their own folders. Do it as refactoring after completing most of the roadmap
 
-## Available Scripts
+### Usage
 
-In the project directory, you can run:
+To set up locally:
 
-### `npm dev` or `npm start`
+1. As prelude, run server from a repository [friday-game-server](https://github.com/alexmaltsevgit/friday-game-server)
+2. Clone this repo
+3. Execute `npm run dev`
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### Roadmap
 
-The page will reload if you make edits.<br>
+Step is considered completed if it's implementation is just fulfilled enough for playing the game with comfort and without obvious bugs
 
-### `npm run build`
+#### Basic components
 
-Builds the app for production to the `dist` folder.<br>
-It correctly bundles Solid in production mode and optimizes the build for the best performance.
+- [x] Button
+- [ ] Input
+- [ ] Modal
+- [ ] Popup
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
+#### Screens / stages
 
-## Deployment
+- [x] Index screen
+- [x] Join screen
+- [x] Awaiting stage
+- [ ] Filling stage (not sure about state synchronization)
+- [ ] Guessing stage
 
-You can deploy the `dist` folder to any static host provider (netlify, surge, now, etc.)
+#### Misc
+
+- [ ] Error handling, error boundaries
+- [ ] Unit testing
+- [ ] Documentation (storybook)
