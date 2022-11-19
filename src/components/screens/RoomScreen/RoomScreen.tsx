@@ -10,6 +10,7 @@ const statusToScreenMap = {
   [RoomStage.Awaiting]: AwaitingStage,
   [RoomStage.Filling]: FillingStage,
   [RoomStage.Guessing]: GuessingStage,
+  [RoomStage.Finished]: GuessingStage,
 };
 
 export const RoomScreen = () => {
