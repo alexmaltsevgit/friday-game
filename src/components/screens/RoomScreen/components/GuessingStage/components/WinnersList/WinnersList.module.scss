@@ -1,0 +1,35 @@
+.root {
+}
+
+.winnersList {
+  display: flex;
+  flex-direction: column;
+  row-gap: calc(24 / 18) + rem;
+
+  margin-top: calc(12 / 18) + rem;
+}
+
+.winner {
+  display: flex;
+  align-items: center;
+
+  column-gap: calc(14 / 18) + rem;
+}
+
+.winnerNumber {
+  color: #fff;
+  font-size: calc(15 / 18) + rem;
+  padding: 2.5px 7px;
+  background-color: var(--accent-secondary-2);
+  border-radius: 100%;
+
+  width: fit-content;
+  height: fit-content;
+  line-height: 1em;
+
+  user-select: none;
+}
+
+.winnerRealName {
+  font-size: calc(24 / 18) + rem;
+}
