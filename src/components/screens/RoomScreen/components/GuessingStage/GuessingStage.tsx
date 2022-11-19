@@ -1,14 +1,18 @@
+import { Show } from "solid-js";
 import { useNavigate } from "@solidjs/router";
 
-import { useDeclareMyselfWinner } from "@/service/store";
+import { useDeclareMyselfWinner, useRoomState } from "@/service/store";
 import { Button } from "@/components/shared";
 import { routes } from "@/service/routes";
-import { ActivePlayersList } from "./components";
+import { ActivePlayersList, WinnersList } from "./components";
 
 import styles from "./GuessingStage.module.scss";
 
 export const GuessingStage = () => {
   const navigate = useNavigate();
+
+  const roomState = useRoomState();
+  const me = () => roomState.game.players[roomState.myId];
 
   const declareMyselfWinnerMutation = useDeclareMyselfWinner();
   const declareMyselfWinner = () => declareMyselfWinnerMutation.mutate();
@@ -19,10 +23,16 @@ export const GuessingStage = () => {
     <div class={styles.root}>
       <h2>Кто я?</h2>
 
-      <ActivePlayersList />
+      <div class={styles.content}>
+        <ActivePlayersList />
+
+        <WinnersList />
+      </div>
 
       <div class={styles.controls}>
-        <Button onClick={declareMyselfWinner}>Сообщить о победе</Button>
+        <Show when={!me().isWinner}>
+          <Button onClick={declareMyselfWinner}>Сообщить о победе</Button>
+        </Show>
 
         <Button variant="outlined" onClick={onGoBack}>
           Выйти
