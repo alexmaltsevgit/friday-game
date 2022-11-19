@@ -10,13 +10,15 @@ export enum RoomStage {
 export type Player = {
   realName: string;
   fictionName: string;
-  guessed: boolean;
+  isWinner: boolean;
+  winnerNumber: number;
 };
 
 export type GameColyseusState = {
   ownerId?: string;
   stage: RoomStage;
   players: MapSchema<Player>;
+  winnersCount: number;
 };
 
 export type RoomColyseusState = {

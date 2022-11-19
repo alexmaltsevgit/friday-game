@@ -8,7 +8,8 @@ export const ActivePlayersList = () => {
   const roomState = useRoomState();
   const players = () => Object.entries(roomState.game.players);
 
-  const activePlayers = () => players().filter(([, player]) => !player.guessed);
+  const activePlayers = () =>
+    players().filter(([, player]) => !player.isWinner);
 
   return (
     <ul class={styles.playersList}>
