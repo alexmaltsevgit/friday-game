@@ -1,9 +1,14 @@
+.root {
+  width: 100%;
+  max-width: 550px;
+}
+
 .playersList {
   display: flex;
   flex-direction: column;
   row-gap: calc(24 / 18) + rem;
 
-  margin-top: 60px;
+  margin-top: calc(12 / 18) + rem;
 }
 
 .player {

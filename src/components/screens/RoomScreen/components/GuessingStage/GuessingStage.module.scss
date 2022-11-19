@@ -4,6 +4,15 @@
   display: contents;
 }
 
+.content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  column-gap: calc(2rem + 20px);
+
+  margin-top: 60px;
+}
+
 .controls {
   display: flex;
   flex-direction: column;

@@ -12,18 +12,24 @@ export const ActivePlayersList = () => {
     players().filter(([, player]) => !player.isWinner);
 
   return (
-    <ul class={styles.playersList}>
-      <For each={activePlayers()}>
-        {([playerId, player]) => (
-          <li class={styles.player}>
-            <span>{player.realName}</span>
+    <Show when={activePlayers().length > 0}>
+      <div class={styles.root}>
+        <h5>Игроки</h5>
 
-            <Show when={playerId !== roomState.myId}>
-              <span class={styles.accentColor}>{player.fictionName}</span>
-            </Show>
-          </li>
-        )}
-      </For>
-    </ul>
+        <ul class={styles.playersList}>
+          <For each={activePlayers()}>
+            {([playerId, player]) => (
+              <li class={styles.player}>
+                <span>{player.realName}</span>
+
+                <Show when={playerId !== roomState.myId}>
+                  <span class={styles.accentColor}>{player.fictionName}</span>
+                </Show>
+              </li>
+            )}
+          </For>
+        </ul>
+      </div>
+    </Show>
   );
 };
