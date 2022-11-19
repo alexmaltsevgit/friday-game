@@ -1,5 +1,5 @@
 import { useNavigate } from "@solidjs/router";
-import { For } from "solid-js";
+import { For, Show } from "solid-js";
 
 import { useRoomState } from "@/service/store";
 import { Button } from "@/components/shared";
@@ -11,9 +11,9 @@ export const GuessingStage = () => {
   const navigate = useNavigate();
 
   const roomState = useRoomState();
-  const players = () => Object.values(roomState.game.players);
+  const players = () => Object.entries(roomState.game.players);
 
-  const activePlayers = () => players().filter((player) => !player.guessed);
+  const activePlayers = () => players().filter(([, player]) => !player.guessed);
 
   const onGoBack = () => navigate(routes.index());
 
@@ -23,10 +23,13 @@ export const GuessingStage = () => {
 
       <ul class={styles.playersList}>
         <For each={activePlayers()}>
-          {(player) => (
+          {([playerId, player]) => (
             <li class={styles.player}>
               <span>{player.realName}</span>
-              <span class={styles.accentColor}>{player.fictionName}</span>
+
+              <Show when={playerId !== roomState.myId}>
+                <span class={styles.accentColor}>{player.fictionName}</span>
+              </Show>
             </li>
           )}
         </For>
