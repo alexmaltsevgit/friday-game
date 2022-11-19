@@ -1,7 +1,7 @@
 import { useNavigate } from "@solidjs/router";
 import { For, Show } from "solid-js";
 
-import { useRoomState } from "@/service/store";
+import { useDeclareMyselfWinner, useRoomState } from "@/service/store";
 import { Button } from "@/components/shared";
 import { routes } from "@/service/routes";
 
@@ -14,6 +14,9 @@ export const GuessingStage = () => {
   const players = () => Object.entries(roomState.game.players);
 
   const activePlayers = () => players().filter(([, player]) => !player.guessed);
+
+  const declareMyselfWinnerMutation = useDeclareMyselfWinner();
+  const declareMyselfWinner = () => declareMyselfWinnerMutation.mutate();
 
   const onGoBack = () => navigate(routes.index());
 
@@ -36,7 +39,7 @@ export const GuessingStage = () => {
       </ul>
 
       <div class={styles.controls}>
-        <Button>Сообщить о победе</Button>
+        <Button onClick={declareMyselfWinner}>Сообщить о победе</Button>
 
         <Button variant="outlined" onClick={onGoBack}>
           Выйти

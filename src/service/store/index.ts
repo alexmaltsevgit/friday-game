@@ -102,4 +102,10 @@ export const useChangePlayerFictionName = () => {
   });
 };
 
+export const useDeclareMyselfWinner = () => {
+  const mutationFn = async () =>
+    room()?.send(SocketMessage.DeclareMyselfWinner);
+  return createMutation(mutationFn);
+};
+
 export const useRoomState = () => roomStore;
