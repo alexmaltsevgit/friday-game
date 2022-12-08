@@ -4,11 +4,9 @@ import clsx from "clsx";
 
 import { Player } from "@/types";
 import { useChangePlayerFictionName } from "@/service/store";
-import { model as modelDir } from "@/directives";
+import { Input } from "@/components/shared";
 
 import styles from "./FillingRow.module.scss";
-
-const model = modelDir;
 
 type Props = {
   myId: string;
@@ -29,8 +27,8 @@ export const FillingRow = (p: Props) => {
 
       <Switch fallback={<></>}>
         <Match when={p.playerId !== p.myId}>
-          <input
-            use:model={[
+          <Input
+            model={[
               () => p.player.fictionName,
               (newFictionName: string) =>
                 changePlayerFictionName({

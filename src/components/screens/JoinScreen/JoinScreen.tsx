@@ -2,15 +2,12 @@ import { createSignal } from "solid-js";
 import { useNavigate, useParams } from "@solidjs/router";
 import { createStorageSignal } from "@solid-primitives/storage";
 
-import { model as modelDir } from "@/directives";
-import { Button } from "@/components/shared";
+import { Button, Input } from "@/components/shared";
 import { routes } from "@/service/routes";
 import { useJoinRoom } from "@/service/store";
 import { LocalStorageKeys } from "@/service/localStorage";
 
 import styles from "./JoinScreen.module.scss";
-
-const model = modelDir;
 
 type Params = {
   id?: string;
@@ -39,12 +36,12 @@ export const JoinScreen = () => {
         <div class={styles.form}>
           <div class={styles.inputContainer}>
             <div class={styles.inputLabel}>Ваше имя</div>
-            <input use:model={[name, setName]} class={styles.input} />
+            <Input model={[name, setName]} class={styles.input} />
           </div>
 
           <div class={styles.inputContainer}>
             <div class={styles.inputLabel}>Код игры</div>
-            <input use:model={[code, setCode]} class={styles.input} />
+            <Input model={[code, setCode]} class={styles.input} />
           </div>
         </div>
 

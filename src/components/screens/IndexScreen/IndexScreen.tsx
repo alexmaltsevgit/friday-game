@@ -2,16 +2,13 @@ import { Show } from "solid-js";
 import { createStorageSignal } from "@solid-primitives/storage";
 import { useNavigate } from "@solidjs/router";
 
-import { Button } from "@/components/shared";
-import { model as modelDir } from "@/directives";
+import { Button, Input } from "@/components/shared";
 import { useCreateRoom } from "@/service/store";
 import { routes } from "@/service/routes";
 import { LocalStorageKeys } from "@/service/localStorage";
 
 import decor from "@/assets/index-screen-decor.png";
 import styles from "./IndexScreen.module.scss";
-
-const model = modelDir;
 
 export const IndexScreen = () => {
   const navigate = useNavigate();
@@ -32,7 +29,7 @@ export const IndexScreen = () => {
           <h1>Кто я?</h1>
 
           <div class={styles.form}>
-            <input use:model={[name, setName]} />
+            <Input model={[name, setName]} placeholder={"Ваше имя"} />
 
             <Show when={mutation.isLoading}>loading...</Show>
 
