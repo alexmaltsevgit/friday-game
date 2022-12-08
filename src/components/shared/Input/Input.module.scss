@@ -1,0 +1,38 @@
+@mixin reset {
+  padding: 0;
+  border: none;
+}
+
+.root {
+  @include reset;
+
+  width: 240px;
+
+  color: var(--grey-3);
+
+  padding: 15px 21px;
+  border-radius: 42px;
+  background-color: var(--grey-1);
+}
+
+.centered {
+  text-align: center;
+}
+
+.fullWidth {
+  width: 100%;
+}
+
+.empty {
+  color: var(--grey-2);
+}
+
+.disabled {
+  color: var(--grey-2);
+  cursor: not-allowed;
+}
+
+.error {
+  color: var(--error);
+  outline: var(--error) 2px solid;
+}
