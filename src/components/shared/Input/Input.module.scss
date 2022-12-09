@@ -23,7 +23,8 @@
   width: 100%;
 }
 
-.empty {
+.empty,
+.empty::placeholder {
   color: var(--grey-2);
 }
 
