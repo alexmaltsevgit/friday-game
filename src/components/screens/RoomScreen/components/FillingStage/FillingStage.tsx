@@ -2,7 +2,7 @@ import { useNavigate } from "@solidjs/router";
 import { Show } from "solid-js";
 import { Entries } from "@solid-primitives/keyed";
 
-import { useChangeGameStage, useRoomState } from "@/service/store";
+import { useChangeGameStage, useRoomStore } from "@/service/store";
 import { Button } from "@/components/shared";
 import { routes } from "@/service/routes";
 import { FillingRow } from "./components";
@@ -13,7 +13,7 @@ import styles from "./FillingStage.module.scss";
 export const FillingStage = () => {
   const navigate = useNavigate();
 
-  const roomState = useRoomState();
+  const roomState = useRoomStore();
 
   const isOwner = () => roomState.myId === roomState.game?.ownerId;
 

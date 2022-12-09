@@ -1,11 +1,11 @@
 import { For, Show } from "solid-js";
 
-import { useRoomState } from "@/service/store";
+import { useRoomStore } from "@/service/store";
 
 import styles from "./WinnersList.module.scss";
 
 export const WinnersList = () => {
-  const roomState = useRoomState();
+  const roomState = useRoomStore();
   const players = () => Object.values(roomState.game.players);
 
   const winners = () => players().filter((player) => player.isWinner);

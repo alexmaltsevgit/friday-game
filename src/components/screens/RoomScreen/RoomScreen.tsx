@@ -1,6 +1,6 @@
 import { onCleanup } from "solid-js";
 
-import { useLeaveRoom, useRoomState } from "@/service/store";
+import { useLeaveRoom, useRoomStore } from "@/service/store";
 import { RoomStage } from "@/types";
 import { AwaitingStage, FillingStage, GuessingStage } from "./components";
 
@@ -14,7 +14,7 @@ const statusToScreenMap = {
 };
 
 export const RoomScreen = () => {
-  const roomState = useRoomState();
+  const roomState = useRoomStore();
   const leaveRoomMutation = useLeaveRoom();
 
   onCleanup(leaveRoomMutation.mutate);

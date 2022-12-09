@@ -1,7 +1,7 @@
 import { useNavigate, useParams } from "@solidjs/router";
 import { For, Show } from "solid-js";
 
-import { useChangeGameStage, useRoomState } from "@/service/store";
+import { useChangeGameStage, useRoomStore } from "@/service/store";
 import { Button } from "@/components/shared";
 import { routes } from "@/service/routes";
 import { RoomStage } from "@/types";
@@ -16,7 +16,7 @@ export const AwaitingStage = () => {
   const { id } = useParams<Params>();
   const navigate = useNavigate();
 
-  const roomState = useRoomState();
+  const roomState = useRoomStore();
   const players = () => Object.values(roomState.game.players);
   const isOwner = () => roomState.myId === roomState.game?.ownerId;
 

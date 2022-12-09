@@ -1,11 +1,11 @@
 import { createEffect } from "solid-js";
 import { useNavigate } from "@solidjs/router";
 
-import { useRoomState } from "@/service/store";
+import { useRoomStore } from "@/service/store";
 import { routes } from "@/service/routes/routes";
 
 export const useSyncRoutes = () => {
-  const roomState = useRoomState();
+  const roomState = useRoomStore();
   const navigate = useNavigate();
 
   createEffect(() => {
