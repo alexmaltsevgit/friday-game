@@ -36,12 +36,20 @@ export const JoinScreen = () => {
         <div class={styles.form}>
           <div class={styles.inputContainer}>
             <div class={styles.inputLabel}>Ваше имя</div>
-            <Input model={[name, setName]} class={styles.input} />
+            <Input
+              model={[name, setName]}
+              class={styles.input}
+              placeholder={"Имя"}
+            />
           </div>
 
           <div class={styles.inputContainer}>
             <div class={styles.inputLabel}>Код игры</div>
-            <Input model={[code, setCode]} class={styles.input} />
+            <Input
+              model={[code, setCode]}
+              class={styles.input}
+              placeholder={"0000"}
+            />
           </div>
         </div>
 
