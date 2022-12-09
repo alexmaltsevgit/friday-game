@@ -27,7 +27,7 @@ Step is considered completed if it's implementation is just fulfilled enough for
 #### Basic components
 
 - [x] Button
-- [ ] Input
+- [x] Input
 - [ ] Modal
 - [ ] Popup
 
