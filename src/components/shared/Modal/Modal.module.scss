@@ -1,0 +1,52 @@
+.root {
+  position: absolute;
+
+  width: 100vw;
+  height: 100vh;
+
+  overflow: hidden;
+
+  background: rgba(0, 0, 0, 0.7);
+
+  animation: fadeIn 0.3s linear;
+}
+
+@keyframes fadeIn {
+  from {
+    background: rgba(0, 0, 0, 0.1);
+  }
+
+  to {
+    background: rgba(0, 0, 0, 0.7);
+  }
+}
+
+.modal {
+  position: absolute;
+
+  top: 50%;
+  left: 50%;
+
+  transform: translate(-50%, -50%);
+
+  max-height: 80vh;
+  width: 560px;
+
+  padding: 54px 42px;
+
+  background-color: #fff;
+
+  border-radius: 18px;
+
+  animation: slideInFromBottom 0.3s cubic-bezier(0.28, 0.12, 0.58, 0.97);
+}
+
+@keyframes slideInFromBottom {
+  from {
+    top: 120%;
+  }
+
+  to {
+    top: 50%;
+  }
+}
