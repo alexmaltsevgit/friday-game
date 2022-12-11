@@ -21,7 +21,19 @@ export const GuessingStage = () => {
   const me = () => roomState.game.players[roomState.myId];
 
   const declareMyselfWinnerMutation = useDeclareMyselfWinner();
-  const declareMyselfWinner = () => declareMyselfWinnerMutation.mutate();
+  const declareMyselfWinner = () =>
+    openModal({
+      component: (
+        <Confirmation
+          confirmationText="Объявляя себя победителем, вы выходите из списка активных игроков. Продолжить?"
+          onConfirm={() => {
+            declareMyselfWinnerMutation.mutate();
+            closeModal();
+          }}
+          onDecline={closeModal}
+        />
+      ),
+    });
 
   const onExit = () =>
     openModal({
