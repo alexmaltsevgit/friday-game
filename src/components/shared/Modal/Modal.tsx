@@ -10,7 +10,7 @@ export const Modal: Component = () => {
   let modalRef: HTMLDivElement;
 
   const onDocumentClick = (e: MouseEvent) => {
-    if (!modalRef.contains(e.target as Node)) closeModal();
+    if (!modalRef?.contains(e.target as Node)) closeModal();
   };
 
   onMount(() => document.addEventListener("click", onDocumentClick));
