@@ -1,0 +1,18 @@
+.root {
+}
+
+.text {
+  font-size: calc(24 / 18) + rem;
+  text-align: center;
+}
+
+.controls {
+  display: flex;
+  column-gap: 2rem;
+
+  margin-top: 2rem;
+
+  > * {
+    flex: 1;
+  }
+}
