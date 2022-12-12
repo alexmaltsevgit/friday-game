@@ -3,6 +3,7 @@ import { onCleanup } from "solid-js";
 import { useLeaveRoom, useRoomStore } from "@/service/store";
 import { RoomStage } from "@/types";
 import { AwaitingStage, FillingStage, GuessingStage } from "./components";
+import { InGameAuth } from "@/components/features";
 
 import styles from "./RoomScreen.module.scss";
 
@@ -13,17 +14,25 @@ const statusToScreenMap = {
   [RoomStage.Finished]: GuessingStage,
 };
 
-export const RoomScreen = () => {
+export const RoomScreen = () => (
+  <InGameAuth>
+    <RoomScreenContent />
+  </InGameAuth>
+);
+
+const RoomScreenContent = () => {
   const roomState = useRoomStore();
   const leaveRoomMutation = useLeaveRoom();
 
   onCleanup(leaveRoomMutation.mutate);
 
   return (
-    <div class={styles.root}>
-      <div class={styles.content}>
-        {statusToScreenMap[roomState.game.stage] ?? <div>Error</div>}
+    <InGameAuth>
+      <div class={styles.root}>
+        <div class={styles.content}>
+          {statusToScreenMap[roomState.game.stage] ?? <div>Error</div>}
+        </div>
       </div>
-    </div>
+    </InGameAuth>
   );
 };
