@@ -25,6 +25,8 @@ export const FillingRow = (p: Props) => {
     <li class={styles.root}>
       <span class={styles.name}>{p.player.realName}</span>
 
+      <hr class={styles.decorLine} />
+
       <Switch fallback={<></>}>
         <Match when={p.playerId !== p.myId}>
           <Input

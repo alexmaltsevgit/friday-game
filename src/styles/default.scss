@@ -35,3 +35,20 @@ h5 {
   font-size: calc(18 / 18) + rem;
   font-weight: 500;
 }
+
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #a19f9f;
+  border: none;
+  border-radius: 15px;
+}
+
+::-webkit-scrollbar-track {
+  background: #d7d5d5;
+  border: none;
+  border-radius: 15px;
+}

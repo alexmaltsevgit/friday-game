@@ -8,7 +8,9 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  column-gap: calc(2rem + 20px);
+
+  row-gap: 3rem;
+  column-gap: calc(3rem + 20px);
 
   margin-top: 60px;
 }

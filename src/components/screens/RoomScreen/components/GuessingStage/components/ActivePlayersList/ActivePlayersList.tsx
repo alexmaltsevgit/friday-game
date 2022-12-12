@@ -19,13 +19,92 @@ export const ActivePlayersList = () => {
         <ul class={styles.playersList}>
           <For each={activePlayers()}>
             {([playerId, player]) => (
-              <li class={styles.player}>
-                <span>{player.realName}</span>
+              <>
+                <li class={styles.player}>
+                  <span>{player.realName}</span>
 
-                <Show when={playerId !== roomState.myId}>
-                  <span class={styles.accentColor}>{player.fictionName}</span>
-                </Show>
-              </li>
+                  <Show when={playerId !== roomState.myId}>
+                    <span class={styles.accentColor}>{player.fictionName}</span>
+                  </Show>
+                </li>
+                <li class={styles.player}>
+                  <span>{player.realName}</span>
+
+                  <Show when={playerId !== roomState.myId}>
+                    <span class={styles.accentColor}>{player.fictionName}</span>
+                  </Show>
+                </li>
+                <li class={styles.player}>
+                  <span>{player.realName}</span>
+
+                  <Show when={playerId !== roomState.myId}>
+                    <span class={styles.accentColor}>{player.fictionName}</span>
+                  </Show>
+                </li>
+                <li class={styles.player}>
+                  <span>{player.realName}</span>
+
+                  <Show when={playerId !== roomState.myId}>
+                    <span class={styles.accentColor}>{player.fictionName}</span>
+                  </Show>
+                </li>
+                <li class={styles.player}>
+                  <span>{player.realName}</span>
+
+                  <Show when={playerId !== roomState.myId}>
+                    <span class={styles.accentColor}>{player.fictionName}</span>
+                  </Show>
+                </li>
+                <li class={styles.player}>
+                  <span>{player.realName}</span>
+
+                  <Show when={playerId !== roomState.myId}>
+                    <span class={styles.accentColor}>{player.fictionName}</span>
+                  </Show>
+                </li>
+                <li class={styles.player}>
+                  <span>{player.realName}</span>
+
+                  <Show when={playerId !== roomState.myId}>
+                    <span class={styles.accentColor}>{player.fictionName}</span>
+                  </Show>
+                </li>
+                <li class={styles.player}>
+                  <span>{player.realName}</span>
+
+                  <Show when={playerId !== roomState.myId}>
+                    <span class={styles.accentColor}>{player.fictionName}</span>
+                  </Show>
+                </li>
+                <li class={styles.player}>
+                  <span>{player.realName}</span>
+
+                  <Show when={playerId !== roomState.myId}>
+                    <span class={styles.accentColor}>{player.fictionName}</span>
+                  </Show>
+                </li>
+                <li class={styles.player}>
+                  <span>{player.realName}</span>
+
+                  <Show when={playerId !== roomState.myId}>
+                    <span class={styles.accentColor}>{player.fictionName}</span>
+                  </Show>
+                </li>
+                <li class={styles.player}>
+                  <span>{player.realName}</span>
+
+                  <Show when={playerId !== roomState.myId}>
+                    <span class={styles.accentColor}>{player.fictionName}</span>
+                  </Show>
+                </li>
+                <li class={styles.player}>
+                  <span>{player.realName}</span>
+
+                  <Show when={playerId !== roomState.myId}>
+                    <span class={styles.accentColor}>{player.fictionName}</span>
+                  </Show>
+                </li>
+              </>
             )}
           </For>
         </ul>

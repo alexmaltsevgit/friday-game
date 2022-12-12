@@ -18,11 +18,88 @@ export const WinnersList = () => {
         <ul class={styles.winnersList}>
           <For each={winners()}>
             {(player) => (
-              <li class={styles.winner}>
-                <span class={styles.winnerNumber}>{player.winnerNumber}</span>
+              <>
+                <li class={styles.winner}>
+                  <span class={styles.winnerNumber}>{player.winnerNumber}</span>
 
-                <span class={styles.winnerRealName}>{player.realName}</span>
-              </li>
+                  <span class={styles.winnerRealName}>{player.realName}</span>
+                </li>
+                <li class={styles.winner}>
+                  <span class={styles.winnerNumber}>{player.winnerNumber}</span>
+
+                  <span class={styles.winnerRealName}>{player.realName}</span>
+                </li>
+                <li class={styles.winner}>
+                  <span class={styles.winnerNumber}>{player.winnerNumber}</span>
+
+                  <span class={styles.winnerRealName}>{player.realName}</span>
+                </li>
+                <li class={styles.winner}>
+                  <span class={styles.winnerNumber}>{player.winnerNumber}</span>
+
+                  <span class={styles.winnerRealName}>{player.realName}</span>
+                </li>
+                <li class={styles.winner}>
+                  <span class={styles.winnerNumber}>{player.winnerNumber}</span>
+
+                  <span class={styles.winnerRealName}>{player.realName}</span>
+                </li>
+                <li class={styles.winner}>
+                  <span class={styles.winnerNumber}>{player.winnerNumber}</span>
+
+                  <span class={styles.winnerRealName}>{player.realName}</span>
+                </li>
+                <li class={styles.winner}>
+                  <span class={styles.winnerNumber}>{player.winnerNumber}</span>
+
+                  <span class={styles.winnerRealName}>{player.realName}</span>
+                </li>
+                <li class={styles.winner}>
+                  <span class={styles.winnerNumber}>{player.winnerNumber}</span>
+
+                  <span class={styles.winnerRealName}>{player.realName}</span>
+                </li>
+                <li class={styles.winner}>
+                  <span class={styles.winnerNumber}>{player.winnerNumber}</span>
+
+                  <span class={styles.winnerRealName}>{player.realName}</span>
+                </li>
+                <li class={styles.winner}>
+                  <span class={styles.winnerNumber}>{player.winnerNumber}</span>
+
+                  <span class={styles.winnerRealName}>{player.realName}</span>
+                </li>
+                <li class={styles.winner}>
+                  <span class={styles.winnerNumber}>{player.winnerNumber}</span>
+
+                  <span class={styles.winnerRealName}>{player.realName}</span>
+                </li>
+                <li class={styles.winner}>
+                  <span class={styles.winnerNumber}>{player.winnerNumber}</span>
+
+                  <span class={styles.winnerRealName}>{player.realName}</span>
+                </li>
+                <li class={styles.winner}>
+                  <span class={styles.winnerNumber}>{player.winnerNumber}</span>
+
+                  <span class={styles.winnerRealName}>{player.realName}</span>
+                </li>
+                <li class={styles.winner}>
+                  <span class={styles.winnerNumber}>{player.winnerNumber}</span>
+
+                  <span class={styles.winnerRealName}>{player.realName}</span>
+                </li>
+                <li class={styles.winner}>
+                  <span class={styles.winnerNumber}>{player.winnerNumber}</span>
+
+                  <span class={styles.winnerRealName}>{player.realName}</span>
+                </li>
+                <li class={styles.winner}>
+                  <span class={styles.winnerNumber}>{player.winnerNumber}</span>
+
+                  <span class={styles.winnerRealName}>{player.realName}</span>
+                </li>
+              </>
             )}
           </For>
         </ul>

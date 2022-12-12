@@ -15,13 +15,11 @@ export const App: Component = () => {
       <Modal />
 
       <div class={styles.root}>
-        <div class={styles.content}>
-          <Routes>
-            <Route path={routes.index()} component={IndexScreen} />
-            <Route path={routes.room()} component={RoomScreen} />
-            <Route path={routes.join()} component={JoinScreen} />
-          </Routes>
-        </div>
+        <Routes>
+          <Route path={routes.index()} component={IndexScreen} />
+          <Route path={routes.room()} component={RoomScreen} />
+          <Route path={routes.join()} component={JoinScreen} />
+        </Routes>
       </div>
     </>
   );

@@ -23,7 +23,7 @@
   flex-direction: column;
   row-gap: calc(24 / 18) + rem;
 
-  margin-top: 60px;
+  margin: 60px 0;
 }
 
 .playersTitle {
@@ -31,10 +31,13 @@
 }
 
 .playersList {
-  width: fit-content;
+  max-height: 400px;
+  overflow-y: auto;
 }
 
 .player {
+  width: fit-content;
+
   padding-block: calc(15 / 18) + rem;
   padding-inline: 1rem;
 
